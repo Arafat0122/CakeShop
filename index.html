@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/thumbnails/013/366/641/small/birthday-cake-silhouette-for-icon-symbol-pictogram-apps-website-art-illustration-logo-or-graphic-design-element-format-png.png" type="image/x-icon">
+    <title>Cake Delight - Your Sweetest Dream</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 2s ease-out;
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+
+        .hover-zoom:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="w-full bg-white shadow-md p-4 sticky top-0 z-50 fade-in">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-indigo-600">Cake Delight</h1>
+            <nav>
+                <ul class="flex space-x-8 text-lg font-medium">
+                    <li><a href="#about" class="hover:text-indigo-600">About</a></li>
+                    <li><a href="#cakes" class="hover:text-indigo-600">Cakes</a></li>
+                    <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white h-screen flex flex-col justify-center items-center slide-up">
+        <div class="text-center">
+            <h2 class="text-5xl font-extrabold mb-4">Taste the Future of Cakes</h2>
+            <p class="text-xl font-light mb-6">Delicious. Minimal. Tech-Savvy Cakes.</p>
+            <a href="#cakes"
+                class="px-8 py-3 bg-white text-indigo-600 rounded-full shadow-lg font-semibold hover:bg-indigo-500 hover:text-white transition duration-300">Explore
+                Cakes</a>
+        </div>
+        <!-- Floating Cake Image -->
+        <div class="absolute bottom-0 right-10">
+            <img src="https://png.pngtree.com/png-vector/20240130/ourmid/pngtree-cupcake-png-with-ai-generated-png-image_11571382.png" alt="cake"
+                class="rounded-full hover-zoom shadow-lg transform hover:rotate-6 transition-all duration-500">
+        </div>
+        <div class="absolute bottom-0 right-10">
+            <img src="https://png.pngtree.com/png-vector/20230418/ourmid/pngtree-cake-dessert-food-transparent-png-image_6709079.png" alt="cake"
+                class="rounded-full hover-zoom shadow-lg transform hover:rotate-6 transition-all duration-500">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white text-center">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold mb-8 fade-in">About Cake Delight</h3>
+            <p class="text-lg leading-relaxed text-gray-700 mx-auto w-2/3 fade-in">
+                Welcome to Cake Delight, where we mix the finest ingredients with the latest tech to bring you cakes
+                that not only taste divine but also look like something out of a dream. Whether you're celebrating a
+                birthday, a wedding, or just a sweet moment, we have the cake for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Cakes Section -->
+    <section id="cakes" class="py-20 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-10">Our Best-Selling Cakes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cake Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://twoplaidaprons.com/wp-content/uploads/2022/02/2-ingredient-chocolate-truffle-thumbnail.jpg" alt="cake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Chocolate Truffle</h4>
+                    <p class="text-gray-600">Rich, decadent, and pure indulgence for chocolate lovers.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://bakewithzoha.com/wp-content/uploads/2023/06/strawberry-cheesecake-featured.jpg" alt="cake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Strawberry Cheesecake</h4>
+                    <p class="text-gray-600">Fresh, creamy, and bursting with berry goodness.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://quigleys.ie/wp-content/uploads/2020/11/choc-pic-1-1.jpg" alt="cake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Rainbow Fantasy</h4>
+                    <p class="text-gray-600">A vibrant and colorful treat for a magical experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-indigo-600 text-white">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-8">Get In Touch</h3>
+            <p class="text-lg mb-6">Order your dream cake today or get a custom cake designed just for you!</p>
+            <a href="mailto:info@cakedelight.com"
+                class="px-10 py-3 bg-white text-indigo-600 rounded-full font-semibold shadow-lg hover:bg-indigo-500 hover:text-white transition duration-300">Contact
+                Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Cake Delight. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
