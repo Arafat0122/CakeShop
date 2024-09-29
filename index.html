@@ -4,23 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/thumbnails/013/366/641/small/birthday-cake-silhouette-for-icon-symbol-pictogram-apps-website-art-illustration-logo-or-graphic-design-element-format-png.png" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://static.vecteezy.com/system/resources/thumbnails/013/366/641/small/birthday-cake-silhouette-for-icon-symbol-pictogram-apps-website-art-illustration-logo-or-graphic-design-element-format-png.png"
+        type="image/x-icon">
     <title>Cake Delight - Your Sweetest Dream</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Animation */
+        /* Animation for Elements */
         .fade-in {
             animation: fadeIn 2s ease-out;
         }
 
         .slide-up {
-            animation: slideUp 1s ease-out;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        /* Smooth Hover Zoom */
+        .hover-zoom {
+            transition: transform 0.4s ease;
         }
 
         .hover-zoom:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Text Shadow for better visibility */
+        .text-shadow-lg {
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-shadow-md {
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .animate-float {
+            animation: float 4s infinite ease-in-out;
+        }
+
+        /* Bounce Animation */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animate-bounce {
+            animation: bounce 5s infinite;
+        }
+
+        /* Slower bounce for a smoother effect */
+        @keyframes bounce-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 5s infinite;
+        }
+
+        /* Fade in from Left */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 1.5s ease-out forwards;
+        }
+
+        /* Fade in from Right */
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in-right {
+            animation: fadeInRight 1.5s ease-out forwards;
+        }
+
+        /* Fade in on Scroll */
+        .scroll-fade {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Slide Up on Scroll */
+        .scroll-slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        }
+
+        .scroll-slide-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Keyframes */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -42,43 +175,170 @@
                 opacity: 1;
             }
         }
+
+        /* Navbar Enhancements */
+        header {
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hamburger Icon */
+        #hamburger:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Mobile Dropdown Menu */
+        #mobileMenu {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        #mobileMenu.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        #backdrop.show {
+            display: block;
+        }
+
+        /* Link Hover State */
+        a:hover {
+            text-decoration: none;
+        }
+
+        /* For smoother link hover transitions */
+        nav ul li a {
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
     </style>
 </head>
 
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gradient-to-r from-pink-300 via-yellow-200 to-teal-300 text-gray-900">
 
     <!-- Header -->
-    <header class="w-full bg-white shadow-md p-4 sticky top-0 z-50 fade-in">
+    <!-- Header Section -->
+    <header class="w-full bg-[#ffffff10] shadow-md p-4 sticky top-0 z-50 fade-in">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-bold text-indigo-600">Cake Delight</h1>
-            <nav>
-                <ul class="flex space-x-8 text-lg font-medium">
-                    <li><a href="#about" class="hover:text-indigo-600">About</a></li>
-                    <li><a href="#cakes" class="hover:text-indigo-600">Cakes</a></li>
-                    <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+
+            <!-- Hamburger Icon (Mobile) -->
+            <div class="md:hidden">
+                <button id="hamburger" class="text-indigo-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex space-x-8 text-lg font-medium">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="hover:text-indigo-600 transition-colors duration-300">About</a></li>
+                    <li><a href="#cakes" class="hover:text-indigo-600 transition-colors duration-300">Cakes</a></li>
+                    <li><a href="#contact" class="hover:text-indigo-600 transition-colors duration-300">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobileMenu"
+                class="absolute top-16 right-4 bg-white rounded-lg shadow-lg w-48 hidden z-50 flex flex-col items-start p-4 transition-transform duration-300 ease-in-out transform translate-y-0 opacity-0">
+                <a href="#about"
+                    class="block w-full text-lg font-medium text-indigo-600 py-2 hover:text-indigo-800">About</a>
+                <a href="#cakes"
+                    class="block w-full text-lg font-medium text-indigo-600 py-2 hover:text-indigo-800">Cakes</a>
+                <a href="#contact"
+                    class="block w-full text-lg font-medium text-indigo-600 py-2 hover:text-indigo-800">Contact</a>
+            </div>
         </div>
     </header>
 
+    <!-- Optional backdrop for mobile menu -->
+    <div id="backdrop" class="fixed inset-0 bg-black opacity-50 hidden"></div>
+
+    <!-- Script for Hamburger Menu and Click Outside -->
+    <script src="./nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const backdrop = document.getElementById('backdrop');
+            const header = document.querySelector('header');
+
+            // Toggle mobile menu visibility
+            hamburger.addEventListener('click', function () {
+                mobileMenu.classList.toggle('show');
+                backdrop.classList.toggle('show');
+            });
+
+            // Close menu when clicking outside
+            backdrop.addEventListener('click', function () {
+                mobileMenu.classList.remove('show');
+                backdrop.classList.remove('show');
+            });
+
+            // Change navbar background on scroll
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+
     <!-- Hero Section -->
     <section
-        class="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white h-screen flex flex-col justify-center items-center slide-up">
-        <div class="text-center">
-            <h2 class="text-5xl font-extrabold mb-4">Taste the Future of Cakes</h2>
+        class="relative h-screen flex flex-col justify-center items-center slide-up overflow-hidden bg-cover bg-center"
+        style="background-image: url('https://i.ibb.co/PZvvS8H/cakeshop.jpg');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center text-white">
+            <h2 class="text-5xl font-extrabold mb-4 animate-pulse">Taste the Future of Cakes</h2>
             <p class="text-xl font-light mb-6">Delicious. Minimal. Tech-Savvy Cakes.</p>
             <a href="#cakes"
-                class="px-8 py-3 bg-white text-indigo-600 rounded-full shadow-lg font-semibold hover:bg-indigo-500 hover:text-white transition duration-300">Explore
-                Cakes</a>
+                class="px-8 py-3 bg-white text-indigo-600 rounded-full shadow-lg font-semibold hover:bg-indigo-500 hover:text-white transition duration-300">
+                Explore Cakes
+            </a>
         </div>
-        <!-- Floating Cake Image -->
-        <div class="absolute bottom-0 right-10">
-            <img src="https://png.pngtree.com/png-vector/20240130/ourmid/pngtree-cupcake-png-with-ai-generated-png-image_11571382.png" alt="cake"
-                class="rounded-full hover-zoom shadow-lg transform hover:rotate-6 transition-all duration-500">
+
+        <!-- Floating Cake Images, now closer to the text -->
+        <div class="absolute bottom-12 left-10 animate-bounce">
+            <img src="https://png.pngtree.com/png-vector/20240130/ourmid/pngtree-cupcake-png-with-ai-generated-png-image_11571382.png"
+                alt="cake"
+                class="rounded-full hover-zoom shadow-lg transform hover:rotate-6 transition-all duration-500 w-20 sm:w-24 md:w-28 lg:w-32">
         </div>
-        <div class="absolute bottom-0 right-10">
-            <img src="https://png.pngtree.com/png-vector/20230418/ourmid/pngtree-cake-dessert-food-transparent-png-image_6709079.png" alt="cake"
-                class="rounded-full hover-zoom shadow-lg transform hover:rotate-6 transition-all duration-500">
+        <div class="absolute bottom-16 right-14 animate-bounce-slow">
+            <img src="https://png.pngtree.com/png-vector/20230418/ourmid/pngtree-cake-dessert-food-transparent-png-image_6709079.png"
+                alt="cake"
+                class="rounded-full hover-zoom shadow-lg transform hover:rotate-6 transition-all duration-500 w-24 sm:w-28 md:w-32 lg:w-36">
+        </div>
+        <div class="absolute top-20 right-20 animate-float">
+            <img src="https://clipart-library.com/images_k/cupcakes-transparent-background/cupcakes-transparent-background-7.png"
+                alt="cake"
+                class="rounded-full hover-zoom shadow-lg transform hover:rotate-3 transition-all duration-500 w-20 sm:w-24 md:w-28 lg:w-32">
+        </div>
+        <div class="absolute top-32 left-20 animate-bounce">
+            <img src="https://www.transparentpng.com/thumb/cupcake/AYRaoS-cupcake-png-transparent-image.png" alt="cake"
+                class="rounded-full hover-zoom shadow-lg transform hover:rotate-6 transition-all duration-500 w-20 sm:w-24 md:w-28 lg:w-32">
+        </div>
+        <div class="absolute top-40 right-40 animate-bounce-slow">
+            <img src="https://png.pngtree.com/png-clipart/20230803/ourmid/pngtree-elegant-pink-indulgence-cupcake-on-a-clean-white-base-png-image_9120043.png"
+                alt="cake"
+                class="rounded-full hover-zoom shadow-lg transform hover:rotate-3 transition-all duration-500 w-20 sm:w-24 md:w-28 lg:w-32 hidden md:flex">
         </div>
     </section>
 
@@ -99,45 +359,285 @@
         <div class="container mx-auto text-center">
             <h3 class="text-4xl font-bold mb-10">Our Best-Selling Cakes</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Cake Card -->
+                <!-- Cake Card 1 -->
                 <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
-                    <img src="https://twoplaidaprons.com/wp-content/uploads/2022/02/2-ingredient-chocolate-truffle-thumbnail.jpg" alt="cake" class="rounded-md mb-4">
+                    <img src="https://twoplaidaprons.com/wp-content/uploads/2022/02/2-ingredient-chocolate-truffle-thumbnail.jpg"
+                        alt="Chocolate Truffle" class="rounded-md mb-4">
                     <h4 class="text-2xl font-bold mb-2">Chocolate Truffle</h4>
                     <p class="text-gray-600">Rich, decadent, and pure indulgence for chocolate lovers.</p>
                 </div>
 
+                <!-- Cake Card 2 -->
                 <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
-                    <img src="https://bakewithzoha.com/wp-content/uploads/2023/06/strawberry-cheesecake-featured.jpg" alt="cake" class="rounded-md mb-4">
+                    <img src="https://bakewithzoha.com/wp-content/uploads/2023/06/strawberry-cheesecake-featured.jpg"
+                        alt="Strawberry Cheesecake" class="rounded-md mb-4">
                     <h4 class="text-2xl font-bold mb-2">Strawberry Cheesecake</h4>
                     <p class="text-gray-600">Fresh, creamy, and bursting with berry goodness.</p>
                 </div>
 
+                <!-- Cake Card 3 -->
                 <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
-                    <img src="https://quigleys.ie/wp-content/uploads/2020/11/choc-pic-1-1.jpg" alt="cake" class="rounded-md mb-4">
+                    <img src="https://quigleys.ie/wp-content/uploads/2020/11/choc-pic-1-1.jpg" alt="Rainbow Fantasy"
+                        class="rounded-md mb-4">
                     <h4 class="text-2xl font-bold mb-2">Rainbow Fantasy</h4>
                     <p class="text-gray-600">A vibrant and colorful treat for a magical experience.</p>
+                </div>
+
+                <!-- New Cake Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://stylesweet.com/wp-content/uploads/2022/06/BestButterCake_Featured.jpg"
+                        alt="Vanilla Bean Cake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Vanilla Bean Cake</h4>
+                    <p class="text-gray-600">A classic cake with real vanilla beans for an exquisite flavor.</p>
+                </div>
+
+                <!-- New Cake Card 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://thescranline.com/wp-content/uploads/2023/06/RED-VELVET-CAKE-23-S-01.jpg"
+                        alt="Red Velvet Cake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Red Velvet Cake</h4>
+                    <p class="text-gray-600">A luscious cake with a hint of cocoa and a velvety texture.</p>
+                </div>
+
+                <!-- New Cake Card 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://www.tamingtwins.com/wp-content/uploads/2023/02/image-26.jpeg"
+                        alt="Lemon Drizzle Cake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Lemon Drizzle Cake</h4>
+                    <p class="text-gray-600">Zesty and refreshing, perfect for lemon lovers!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cup Cakes -->
+    <section id="cupcakes" class="py-20 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-10">Our Delicious Cupcakes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cupcake Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://handletheheat.com/wp-content/uploads/2021/02/chocolate-cupcakes-SQUARE.png"
+                        alt="Chocolate Cupcake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Chocolate Cupcake</h4>
+                    <p class="text-gray-600">Moist and fluffy with rich chocolate frosting.</p>
+                </div>
+
+                <!-- Cupcake Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://sugarees.com/cdn/shop/products/white-cupcake-2_800x.jpg?v=1662665737"
+                        alt="Vanilla Cupcake" class="rounded-md mb-4 border">
+                    <h4 class="text-2xl font-bold mb-2">Vanilla Cupcake</h4>
+                    <p class="text-gray-600">Classic vanilla flavor topped with creamy frosting.</p>
+                </div>
+
+                <!-- Cupcake Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://mediavine-res.cloudinary.com/image/upload/s--8mornGpy--/c_limit,f_auto,fl_lossy,h_1080,q_auto,w_1920/v1705593077/jfyzwyu2r4cifoildd7b.jpg"
+                        alt="Red Velvet Cupcake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Red Velvet Cupcake</h4>
+                    <p class="text-gray-600">Beautifully red and topped with cream cheese frosting.</p>
+                </div>
+
+                <!-- New Cupcake Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://static.toiimg.com/thumb/55599531.cms?imgsize=92701&width=800&height=800"
+                        alt="Strawberry Cupcake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Strawberry Cupcake</h4>
+                    <p class="text-gray-600">Fresh strawberries make this cupcake a fruity delight.</p>
+                </div>
+
+                <!-- New Cupcake Card 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://preppykitchen.com/wp-content/uploads/2020/03/lemono-cupcakes-recipe.jpg"
+                        alt="Lemon Cupcake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Lemon Cupcake</h4>
+                    <p class="text-gray-600">Tangy lemon flavor topped with lemon buttercream.</p>
+                </div>
+
+                <!-- New Cupcake Card 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-zoom transition-all duration-300">
+                    <img src="https://www.littlepiecompany.com/wp-content/uploads/2014/10/Cookies-Cream-Cupcake-800x800.jpg"
+                        alt="Cookies and Cream Cupcake" class="rounded-md mb-4">
+                    <h4 class="text-2xl font-bold mb-2">Cookies and Cream Cupcake</h4>
+                    <p class="text-gray-600">Chocolate cupcake with cookies and cream frosting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-10">Our Delicious Food Gallery</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://img.freepik.com/premium-photo/gourmet-dessert-high-quality-dish-molecular-cuisine-closeup_641010-39107.jpg"
+                        alt="Dessert" class="w-full h-64 object-cover transition-transform transform hover:scale-105">
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cakebycourtney.com/wp-content/uploads/2018/07/Cake-Table-e1563806568365.jpg"
+                        alt="Cakes" class="w-full h-64 object-cover transition-transform transform hover:scale-105">
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/480/734/368/cakes-pastries-desserts-wallpaper-preview.jpg"
+                        alt="Pastries" class="w-full h-64 object-cover transition-transform transform hover:scale-105">
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://img.taste.com.au/kB3kFS67/taste/2010/01/vanilla-cupcakes-image1-197970-1.jpg"
+                        alt="Cupcakes" class="w-full h-64 object-cover transition-transform transform hover:scale-105">
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://www.vikhrolicucina.com/uploads/stories/1662465216_groupindianassortedsweetsmithaiwithdiya.jpg"
+                        alt="Sweets" class="w-full h-64 object-cover transition-transform transform hover:scale-105">
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://weekendatthecottage.com/wp-content/uploads/2016/11/DSC_1375.jpg" alt="Tarts"
+                        class="w-full h-64 object-cover transition-transform transform hover:scale-105">
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://www.allrecipes.com/thmb/Ce2tkd1gnhuxiuXtOoVUM1r6-EI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/244964-simple-cake-pops-DDMFS-4x3-d9427cfc78cc4585b2eeaef4ba28f6ab.jpg"
+                        alt="Cake Pops" class="w-full h-64 object-cover transition-transform transform hover:scale-105">
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://img.taste.com.au/VdotEqr0/taste/2020/11/condensed-milk-choc-ripple-pie-167647-2.jpg"
+                        alt="Chocolate Desserts"
+                        class="w-full h-64 object-cover transition-transform transform hover:scale-105">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-indigo-600 text-white">
+    <section id="contact" class="py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white">
         <div class="container mx-auto text-center">
             <h3 class="text-4xl font-bold mb-8">Get In Touch</h3>
             <p class="text-lg mb-6">Order your dream cake today or get a custom cake designed just for you!</p>
-            <a href="mailto:info@cakedelight.com"
-                class="px-10 py-3 bg-white text-indigo-600 rounded-full font-semibold shadow-lg hover:bg-indigo-500 hover:text-white transition duration-300">Contact
-                Us</a>
+            <div class="max-w-md mx-auto">
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <input type="text" id="name" class="w-full px-4 py-2 rounded-lg text-gray-900"
+                            placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <input type="email" id="email" class="w-full px-4 py-2 rounded-lg text-gray-900"
+                            placeholder="Your Email" required>
+                    </div>
+                    <div>
+                        <textarea id="message" class="w-full px-4 py-2 rounded-lg text-gray-900"
+                            placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"
+                            class="px-10 py-3 bg-white text-indigo-600 rounded-full font-semibold shadow-lg hover:bg-indigo-500 hover:text-white transition duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
+    <!-- SweetAlert2 script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./contact.js"></script>
+
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Cake Delight. All rights reserved.</p>
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+
+            <!-- Social Media Links -->
+            <div class="mb-4">
+                <h4 class="text-lg font-semibold">Follow Us</h4>
+                <div class="flex justify-center space-x-4 mt-2">
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i class="fab fa-pinterest fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mb-4">
+                <h4 class="text-lg font-semibold">Quick Links</h4>
+                <ul class="flex flex-col items-center mt-2 space-y-1">
+                    <li><a href="#about" class="hover:text-white transition duration-300">About</a></li>
+                    <li><a href="#cakes" class="hover:text-white transition duration-300">Cakes</a></li>
+                    <li><a href="#contact" class="hover:text-white transition duration-300">Contact</a></li>
+                    <li><a href="#blog" class="hover:text-white transition duration-300">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="mb-4">
+                <h4 class="text-lg font-semibold">Contact Us</h4>
+                <p>info@cakedelight.com</p>
+                <p>(+123) 456-7890</p>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="mb-4">
+                <h4 class="text-lg font-semibold">Subscribe to Our Newsletter</h4>
+                <input type="email" id="newsletterEmail" placeholder="Enter your email"
+                    class="mt-2 px-4 py-2 rounded text-gray-900">
+                <button id="subscribeBtn"
+                    class="mt-2 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-500 transition duration-300">Subscribe</button>
+            </div>
         </div>
+
+        <p class="mt-4 text-center">&copy; 2024 Cake Delight. All rights reserved.</p>
     </footer>
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('subscribeBtn').addEventListener('click', function () {
+            const email = document.getElementById('newsletterEmail').value;
+
+            // Check if the email is valid
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailPattern.test(email)) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Subscribed!',
+                    text: 'Thank you for subscribing to our newsletter!',
+                    confirmButtonText: 'Okay'
+                });
+                document.getElementById('newsletterEmail').value = ''; // Clear the input
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please enter a valid email address.',
+                    confirmButtonText: 'Try Again'
+                });
+            }
+        });
+    </script>
 
 </body>
 
